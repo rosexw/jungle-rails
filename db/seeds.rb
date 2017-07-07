@@ -20,7 +20,8 @@ unless Rails.env.development?
 end
 
 # Let's do this ...
-
+## USERS
+Users.destroy_all
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
