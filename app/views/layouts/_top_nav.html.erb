@@ -31,7 +31,7 @@
           <% if current_user %>
             Signed in as <%= current_user.first_name %> <%= link_to "Logout", '/logout' %>
           <% else %>
-            <%= link_to 'Login', '/login' %>
+            <%= link_to 'Login', '/sessions/new' %>
             <%= link_to 'Register', [:new, :user] %>
           <% end %>
         </li>
