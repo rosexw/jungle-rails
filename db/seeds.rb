@@ -22,6 +22,20 @@ end
 # Let's do this ...
 ## USERS
 User.destroy_all
+
+user1 = User.create!({
+  first_name: 'Rose',
+  last_name: 'Wan',
+  email: 'no-reply@jungle.com',
+  password_digest: 'asdf1234'
+})
+
+user2 = User.create!({
+  first_name: 'Rose2',
+  last_name: 'Wan2',
+  email: 'no-reply2@jungle.com',
+  password_digest: '1234asdf'
+})
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -133,11 +147,13 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+##Reviews
 Review.destroy_all
 
 puts "Re-creating Reviews ..."
-Review.create(product_id: 1, user_id: '', description: "test1", rating: "3")
-Review.create(product_id: 1, user_id: '', description: "test2", rating: "4")
-Review.create(product_id: 2, user_id: '', description: "test3", rating: "5")
+
+Review.create(product_id: 1, user_id: 1, description: "Meh", rating: "3")
+Review.create(product_id: 1, user_id: 1, rating: "4")
+Review.create(product_id: 2, user_id: 1, description: "Best item ever!", rating: "5")
 
 puts "DONE!"
