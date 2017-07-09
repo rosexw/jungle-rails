@@ -21,20 +21,27 @@
           <dt>Quantity</dt>
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
-          <dd><%= @product.price %></dd>
+          <dd>$<%= @product.price %></dd>
         </dl>
       </div>
     </div>
 
     <div class="user-reviews">
       <h3>Reviews</h3>
-        <% @product.reviews.each do |r| %>
-          <p><%= r.inspect %></p>
+      <% if @product.reviews.length == 0 %>
+       <td> <em> There are no reviews for this Item </em> </td>
+      <% end %>
+
+      <% @product.reviews.each do |review| %>
+          <p><%= review.created_at %></p>
+          <p><b>Name: </b><%= review.user.first_name %></p>
+          <p><b>Comment: </b><%= review.description %></p>
+          <p><b>Rating: </b><%= review.rating %>/5</p>
         <% end %>
       <br>
       <br>
       <br>
-      <h4>New review:</h4>
+      <h4>Write a new review:</h4>
         <%= form_for :review, url: "/products/#{@product.id}/reviews" do |r| %>
           Description: <%= r.text_area :description%>
           Rating: <%= r.select :rating,options_for_select([5,4,3,2,1]), {}%>
