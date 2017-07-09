@@ -30,7 +30,9 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Project Description
 Project Description
+
 Goal
+
 There are multiple high-level goals to this project:
 
 + Become familiar with Ruby and the Rails framework
@@ -68,7 +70,7 @@ This section lists the functional specs that our mentors will be sampling when e
 
 # Feature: Email Receipt
 + Major: The e-mail content should be (minimally) formatted with HTML
-+ It does not need any layout styling and should be mostly, if not all, text (i.e. make do with <p>, <hr>, <h1>, <br> and other simple formatting tags)
++ It does not need any layout styling and should be mostly, if not all, text (i.e. make do with < p >, < hr >, < h1 >, < br > and other simple formatting tags)
 + Since you don't know their name information, it can just have a generic greeting
 + Major: It should list the total as well as each line item in the order
 + Minor: The Order ID should be in the subject line
