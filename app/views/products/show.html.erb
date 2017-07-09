@@ -26,6 +26,21 @@
       </div>
     </div>
 
+    <div class="user-reviews">
+      <h3>Reviews</h3>
+        <% @product.reviews.each do |r| %>
+          <p><%= r.inspect %></p>
+        <% end %>
+      <br>
+      <br>
+      <br>
+      <h4>New review:</h4>
+        <%= form_for :review, url: "/products/#{@product.id}/reviews" do |r| %>
+          Description: <%= r.text_area :description%>
+          Rating: <%= r.select :rating,options_for_select([5,4,3,2,1]), {}%>
+          <%= submit_tag("Add Review") %>
+        <% end %>
+    </div>
   </article>
 
 </section>

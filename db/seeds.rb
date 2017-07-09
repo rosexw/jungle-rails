@@ -27,14 +27,14 @@ user1 = User.create!({
   first_name: 'Rose',
   last_name: 'Wan',
   email: 'no-reply@jungle.com',
-  password_digest: 'asdf1234'
+  password: 'test'
 })
 
 user2 = User.create!({
   first_name: 'Rose2',
   last_name: 'Wan2',
   email: 'no-reply2@jungle.com',
-  password_digest: '1234asdf'
+  password: 'test'
 })
 ## CATEGORIES
 
