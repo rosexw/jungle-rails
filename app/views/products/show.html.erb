@@ -42,20 +42,28 @@
           <p><b>Rating: </b><%= review.rating %>/5</p>
           <p><tr>
             <% if review.user_id == @current_user.id %>
-                <%= button_to "Edit", product_reviews_path(@product, review), :method => :update %>
-                <%= button_to "Delete", product_reviews_path(@product, review), :confirm => "Are you sure?", :method => :delete%>
+                <%= button_to "Edit", product_review_path(@product, review), :method => :update %>
+                <%= button_to "Delete", product_review_path(@product, review), :confirm => "Are you sure?", :method => :delete%>
             <% end %>
           </tr></p>
         <% end %>
       <br>
       <br>
-      <br>
       <h4>Write a new review:</h4>
         <%= form_for :review, url: "/products/#{@product.id}/reviews" do |r| %>
           Description: <%= r.text_area :description%>
+          <!-- count down from 5 as default instead of 1! -->
           Rating: <%= r.select :rating,options_for_select([5,4,3,2,1]), {}%>
           <%= submit_tag("Add Review") %>
         <% end %>
+      <br>
+      <h3>
+        <!-- added these for easier navigation at the end of the page.
+        Add to cart and change quantity later...unimportant at this time, but I do want to add the feature -->
+        <span style="float: left"> <%= link_to "⬅ Go Back to All Products", :back %></span>
+        <span style="float: right"><%= link_to "Continue to Checkout", :cart %></span>
+      </h3>
+
     </div>
   </article>
 

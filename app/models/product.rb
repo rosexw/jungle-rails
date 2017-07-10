@@ -12,4 +12,10 @@ class Product < ActiveRecord::Base
   validates :quantity, presence: true
   validates :category, presence: true
 
+  # def validations
+  #   errors.add(:name, "Name must not be empty")
+  #   errors.add(:price, "Price must not be empty")
+  #   errors.add(:quantity, "Quantity must not be empty")
+  #   errors.add(:category, "Category must be defined")
+  # end
 end

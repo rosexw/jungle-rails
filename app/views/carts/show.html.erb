@@ -7,7 +7,9 @@
 
     <% if cart.none? %>
     <div class="panel panel-default items">
-      <%= flash.now[:alert] = "Your cart is empty! Please fill before proceeding"%>
+      <%= flash.now[:alert] = "Your cart is empty! Please fill cart before proceeding"%>
+      <br>
+      <br>
       <p><%= link_to '⬅ Go back to products', '/'%></p>
     </div>
     <% else %>
