@@ -33,10 +33,19 @@
       <% end %>
 
       <% @product.reviews.each do |review| %>
-          <p><%= review.created_at %></p>
+      <br>
+      <br>
+      <table>
+          <p><%=review.created_at.strftime("%d %B %Y")%></p>
           <p><b>Name: </b><%= review.user.first_name %></p>
           <p><b>Comment: </b><%= review.description %></p>
           <p><b>Rating: </b><%= review.rating %>/5</p>
+          <p><tr>
+            <% if review.user_id == @current_user.id %>
+                <%= button_to "Edit", product_reviews_path(@product, review), :method => :update %>
+                <%= button_to "Delete", product_reviews_path(@product, review), :confirm => "Are you sure?", :method => :delete%>
+            <% end %>
+          </tr></p>
         <% end %>
       <br>
       <br>
