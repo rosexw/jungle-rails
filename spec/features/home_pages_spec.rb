@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
 
-  # # SETUP
+  # SETUP
   before :each do
     @category = Category.create! name: 'Apparel'
 
@@ -21,9 +21,9 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     visit root_path
     #binding.pry
     # DEBUG / VERIFY
-    expect(page).to have_content(64.99)
-    save_screenshot
-    expect(page).to have_css 'article.product'
+    # expect(page).to have_content(64.99)
+    # save_screenshot
+    expect(page).to have_css 'article.product', count: 10
   end
 
 end
