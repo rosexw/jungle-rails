@@ -62,6 +62,7 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
     cliver (0.3.2)
+    coderay (1.1.1)
     concurrent-ruby (1.0.2)
     database_cleaner (1.6.1)
     debug_inspector (0.0.2)
@@ -94,6 +95,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -120,6 +122,13 @@ GEM
       capybara (~> 2.1)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.4.2)
+      byebug (~> 9.0)
+      pry (~> 0.10)
     public_suffix (2.0.5)
     puma (3.5.2)
     quiet_assets (1.0.3)
@@ -191,6 +200,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    slop (3.6.0)
     spring (1.7.2)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
@@ -244,6 +254,8 @@ DEPENDENCIES
   newrelic_rpm
   pg
   poltergeist
+  pry
+  pry-byebug
   puma
   quiet_assets
   rails (= 4.2.6)
